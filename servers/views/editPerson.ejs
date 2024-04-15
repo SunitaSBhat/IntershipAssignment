@@ -1,0 +1,26 @@
+<!-- editPerson.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Person</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <%- include('./navbar.ejs') %>
+    <form action="/person/<%= person._id %>?_method=PUT" method="POST"> <!-- Use method="POST" -->
+        <input type="hidden" name="_method" value="PUT"> <!-- Hidden field to override method to PUT -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= person.name %>">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="<%= person.age %>">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" value="<%= person.gender %>">
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber" value="<%= person.mobileNumber %>">
+        <button type="submit">Update Person</button>
+  </form>
+</body>
+</html>

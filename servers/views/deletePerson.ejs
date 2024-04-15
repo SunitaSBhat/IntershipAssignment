@@ -1,0 +1,20 @@
+<!-- deletePerson.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Person</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <%- include('./navbar.ejs') %>
+  <h1>Delete Person</h1>
+  <p>Are you sure you want to delete <%= person.name %>?</p>
+  <form action="/person/<%= person._id %>?_method=DELETE" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Delete</button>
+  </form>
+</body>
+</html>

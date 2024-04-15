@@ -1,0 +1,35 @@
+<!-- personList.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Person List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('./navbar.ejs') %>
+  <h1>List of People</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Mobile Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% people.forEach(person => { %>
+        <tr>
+          <td><%= person.name %></td>
+          <td><%= person.age %></td>
+          <td><%= person.gender %></td>
+          <td><%= person.mobileNumber %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

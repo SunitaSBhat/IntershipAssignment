@@ -1,0 +1,7 @@
+<h1>Edit Person</h1>
+<form (submit)="saveChanges()">
+  <input type="text" [(ngModel)]="person.name" name="name" placeholder="Name">
+  <input type="number" [(ngModel)]="person.age" name="age" placeholder="Age">
+  <button type="submit">Save</button>
+</form>
+
